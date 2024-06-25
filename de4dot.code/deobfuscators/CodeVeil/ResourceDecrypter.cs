@@ -308,8 +308,8 @@ namespace de4dot.code.deobfuscators.CodeVeil {
 				reader.Position = 0;
 				uint sig = reader.ReadUInt32();
 				reader.Position = 0;
-				if (sig == 0xBEEFCACE)
-					return DecryptBeefcace(ref reader);
+				//if (sig == 0xBEEFCACE)
+				//	return DecryptBeefcace(ref reader);
 				if (sig == 0x58455245)
 					return DecryptErex(ref reader);
 				return null;
@@ -323,10 +323,10 @@ namespace de4dot.code.deobfuscators.CodeVeil {
 			}
 		}
 
-		byte[] DecryptBeefcace(ref DataReader reader) {
-			var resourceReader = new ResourceReader(ref reader);
-			return new ResourceConverter(module, resourceReader.Read()).Convert();
-		}
+		//byte[] DecryptBeefcace(ref DataReader reader) {
+		//	var resourceReader = new ResourceReader(ref reader);
+		//	return new ResourceConverter(module, resourceReader.Read()).Convert();
+		//}
 
 		byte[] DecryptErex(ref DataReader reader) => new ErexResourceReader(ref reader).Decrypt();
 

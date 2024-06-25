@@ -208,6 +208,9 @@ namespace de4dot.cui {
 						filesOptions.MetadataFlags |= flag;
 				}
 			}));
+			miscOptions.Add(new NoArgOption(null, "keep-old-max-stack", "Keep Old Max Stack", () => {
+				filesOptions.MetadataFlags |= MetadataFlags.KeepOldMaxStack;
+			}));
 			miscOptions.Add(new NoArgOption(null, "preserve-strings", "Preserve #Strings heap offsets", () => {
 				filesOptions.MetadataFlags |= MetadataFlags.PreserveStringsOffsets;
 			}));
